@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GetApiService } from './get-api.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'projetoAtlanse';
+  title = 'Chamar API teste';
+
+  constructor(private api: GetApiService) { }
+
+  ngOnInit() {
+    this.api.apiCall().subscribe((data) => {
+      console.warn("Dados da Api: ", data);
+    })
+  }
+
 }

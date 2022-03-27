@@ -9,6 +9,7 @@ export class GetApiService {
   constructor(private http: HttpClient) { }
 
   apiCall() {
-    return this.http.get('https://gitlab.com/api/v4/projects/23781207');
+    const headers = { 'Authorization': 'glpat-y5iRJ5hXXvJ1zyskwMrv', 'My-Custom-Header': 'foobar' }
+    return this.http.get('https://gitlab.com/api/v4/projects/23781207', { headers });
   }
 }

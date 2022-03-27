@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GetApiService } from './get-api.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { GetApiService } from './get-api.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Chamar API teste';
 
   constructor(private api: GetApiService) { }
